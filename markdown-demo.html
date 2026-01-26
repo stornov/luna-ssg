@@ -35,7 +35,7 @@
 <h2>Text Formatting</h2>
 <p><strong>This is bold text.</strong></p>
 <p><em>This is italic text.</em></p>
-<p>~~This was a mistake.~~</p>
+<p><s>This was a mistake.</s></p>
 <p>You can combine them <strong>like <em>this</em></strong>.</p>
 <hr />
 <h2>Blockquotes</h2>
@@ -93,11 +93,32 @@ Done.
 <hr />
 <h2>Tables</h2>
 <p>You can create tables with headers and aligned columns.</p>
-<p>| Feature         | Status      | Priority |
-| :-------------- | :---------: | -------: |
-| Markdown Parser | Implemented |     High |
-| Templating      | Implemented |     High |
-| Coffee Maker    | Future      |      Low |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Feature</th>
+<th style="text-align:center">Status</th>
+<th style="text-align:right">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Markdown Parser</td>
+<td style="text-align:center">Implemented</td>
+<td style="text-align:right">High</td>
+</tr>
+<tr>
+<td style="text-align:left">Templating</td>
+<td style="text-align:center">Implemented</td>
+<td style="text-align:right">High</td>
+</tr>
+<tr>
+<td style="text-align:left">Coffee Maker</td>
+<td style="text-align:center">Future</td>
+<td style="text-align:right">Low</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2>Horizontal Rule</h2>
 <p>A horizontal rule is created with three hyphens and is great for separating sections.</p>
