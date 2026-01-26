@@ -25,9 +25,10 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ## 🛠️ Tech Stack
 
 * **Engine**: Python 3.x
-* **Parsing**: `python-frontmatter`, `markdown`
-* **Templating**: `python-liquid`
-* **Config**: `pyyaml`
+* **python-liquid**: Templating engine for flexible HTML layouts.
+* **python-frontmatter**: For parsing YAML metadata in Markdown files.
+* **markdown-it-py**: Fast and CommonMark-compliant Markdown parser (replaces standard `markdown` lib).
+* **pyyaml**: For project configuration management.
 
 ## ⚙️ Configuration
 
