@@ -30,13 +30,35 @@ a:hover { text-decoration: underline; }
 s, del { color: #888; }
 
 /* === LISTS (UL/OL) === */
+/* Базовые стили для списков первого уровня */
 #post ul, #post ol {
     margin-bottom: 1em;
-    padding-left: 2em;
+    padding-left: 2em; /* Начальный отступ для точек */
     text-align: left;
 }
-#post ul ul, #post ol ol { margin-top: 0.5em; margin-bottom: 0.5em; }
-#post li { margin-bottom: 0.5em; }
+
+/* Стили для всех элементов списка */
+#post li {
+    margin-bottom: 0.5em;
+    padding-left: 0.5em; /* Небольшой отступ текста от маркера */
+}
+
+/* --- ВАЖНОЕ ИЗМЕНЕНИЕ --- */
+/* Стиль для ВЛОЖЕННЫХ списков (второй и последующие уровни) */
+#post ul ul, #post ul ol, #post ol ul, #post ol ol {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    /* Добавляем дополнительный отступ, чтобы визуально сдвинуть вложенный список вправо */
+    padding-left: 1.5em;
+}
+
+/* Меняем маркеры для вложенных списков для наглядности */
+#post ul ul li {
+    list-style-type: circle; /* Пустой кружок */
+}
+#post ul ul ul li {
+    list-style-type: square; /* Квадратик */
+}
 
 /* === IMAGES === */
 #post p { text-align: justify; } /* Возвращаем justify для обычного текста */
