@@ -67,8 +67,7 @@ def process_posts(env, config, global_context):
         html_content = markdown.markdown(post.content, extensions=['fenced_code', 
                                                                    'attr_list',
                                                                    'tables',
-                                                                   'sane_lists',
-                                                                   'markdown.extensions.strike'])
+                                                                   'sane_lists'])
         
         custom_slug = post.get("slug")
         post_title = post.get("title")
