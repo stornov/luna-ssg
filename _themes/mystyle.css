@@ -1,6 +1,8 @@
+/* === GLOBAL RESETS & DEFAULTS === */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* More predictable sizing */
 }
 
 html, body {
@@ -8,106 +10,194 @@ html, body {
 }
 
 body {
-    background-color: white;
-    font: 13.34px helvetica, arial, clean, sans-serif;
+    background-color: #ffffff;
+    font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
     text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-}
-
-h1 {
-    margin-bottom: 1em;
-}
-
-p {
-    margin: 1em 0;
-}
-
-a {
-    color: #00a;
-}
-
-a:visited {
-    color: #a0a;
-}
-
-a:hover {
-    color: black;
-}
-
-table {
-    font-size: inherit;
-    font: 100%;
-}
-
-/* --- ИСПРАВЛЕННЫЕ СПИСКИ --- */
-/* Чтобы точки были ровными и не исчезали */
-#post ul, #post ol {
-    margin: 1em 0;
-    padding-left: 2em; /* Место для точек слева */
-    list-style-position: outside; /* Точки вынесены за блок текста */
-    text-align: left; /* Текст выравнивается влево, а не по ширине */
-}
-
-#post li {
-    margin-bottom: 0.5em;
     line-height: 1.6;
 }
 
-/* Списки на главной странице */
-ul.posts {
-    list-style-type: none;
-    margin-bottom: 2em;
+/* === HEADINGS (H1-H6) === */
+/* Now they have different sizes */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    text-align: left; /* Headers should be left-aligned */
 }
 
-ul.posts li {
-    line-height: 1.75em;
+h1 { font-size: 2.25em; }
+h2 { font-size: 1.75em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; color: #777; }
+
+
+/* === LINKS & TEXT === */
+p {
+    margin-bottom: 1em;
 }
 
-ul.posts span {
-    color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
-/* --- СТРУКТУРА САЙТА --- */
+/* Strikethrough text */
+s, del {
+    color: #888;
+}
+
+
+/* === LISTS (UL/OL) === */
+/* Fixes indentation for sub-items */
+#post ul, #post ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+    text-align: left;
+}
+#post ul ul, #post ol ol {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+#post li {
+    margin-bottom: 0.5em;
+}
+
+
+/* === IMAGES === */
+/* Prevents text from justifying around the image */
+#post p:has(img) {
+    text-align: left; /* Or center if you prefer */
+}
+#post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 1em;
+}
+
+
+/* === CODE BLOCKS === */
+/* 1. Base style for all <pre> blocks */
+#post pre {
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 6px;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: "SF Mono", "Consolas", "Menlo", monospace;
+}
+
+/* 2. Style for standard code (light theme) */
+#post pre:not(.terminal) {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    color: #24292f;
+}
+
+/* 3. Style for Terminal (dark theme) */
+#post pre.terminal {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    border: 1px solid #111;
+}
+
+/* Inline code styles */
+#post code {
+    font-family: "SF Mono", "Consolas", "Menlo", monospace;
+    font-size: 0.9em;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+/* Reset styles for code inside a <pre> block */
+#post pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    font-size: 1em;
+}
+
+/* === TABLES === */
+/* Basic but functional table styles */
+#post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    text-align: left;
+}
+#post th, #post td {
+    border: 1px solid #d0d7de;
+    padding: 0.5em 0.75em;
+}
+#post th {
+    font-weight: 600;
+    background-color: #f6f8fa;
+}
+#post tr:nth-child(even) {
+    background-color: #f6f8fa;
+}
+
+
+/* === HORIZONTAL RULE === */
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 2em 0;
+}
+
+
+/* === BLOCKQUOTES === */
+#post blockquote {
+    padding-left: 1em;
+    border-left: 4px solid #d0d7de;
+    color: #6a737d;
+    margin: 1.5em 0;
+}
+
+
+/* === SITE STRUCTURE (Your old styles, slightly adapted) === */
 .site {
     font-size: 110%;
     text-align: justify;
-    width: 42em;
+    width: 48em; /* A bit wider for better readability */
+    max-width: 90%;
     margin: 3em auto 2em auto;
-    line-height: 1.5em;
 }
 
 .title {
     color: #0a5494;
     font-weight: bold;
     margin-bottom: 2em;
+    text-align: left;
 }
-
 .site .title a {
     color: #0a5494;
     text-decoration: none;
 }
-
 .site .title a:hover {
     color: black;
 }
-
 .site .title a.extra {
     color: #aaa;
     text-decoration: none;
     margin-left: 1em;
 }
 
-.site .title a.extra:hover {
-    color: black;
-}
-
 .site .meta {
-    color: #aaa;
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 2em;
+    text-align: left;
 }
 
 .site .footer {
@@ -115,78 +205,25 @@ ul.posts span {
     color: #666;
     border-top: 4px solid #eee;
     margin-top: 2em;
+    padding-top: 1em;
     overflow: hidden;
+    text-align: left;
 }
-
 .site .footer .contact {
     float: left;
     margin-right: 3em;
 }
 
-.site .footer .contact a {
-    color: #8085C1;
+ul.posts {
+    list-style-type: none;
+    margin-bottom: 2em;
+    text-align: left;
 }
-
-/* --- СТИЛИ ДЛЯ КОДА (ВСЕГДА ТЕМНЫЕ) --- */
-
-#post pre {
-    /* Геометрия */
-    padding: 1em;
-    margin: 1.5em 0;
-    border-radius: 6px;
-    line-height: 1.5;
-    
-    /* Технические правки (обязательно!) */
-    text-align: left;     /* Отменяем центрирование body */
-    white-space: pre;     /* Сохраняем пробелы */
-    overflow-x: auto;     /* Скролл, если строка длинная */
-    
-    /* Шрифты */
-    font-family: Consolas, "Monaco", "Courier New", monospace;
-
-    /* ЦВЕТА: ТЕМНАЯ ТЕМА */
-    background-color: #2d2d2d; /* Темно-серый фон */
-    color: #f8f8f2;            /* Белый текст */
-    border: 1px solid #111;    /* Темная рамка */
+ul.posts li {
+    line-height: 1.75em;
 }
-
-/* Сам текст кода */
-#post code {
-    font-family: Consolas, "Monaco", "Courier New", monospace;
-    font-size: 90%;
-    
-    /* Убираем фон и цвет, чтобы они наследовались от pre */
-    background-color: transparent;
-    color: inherit; 
-    border: none;
-    padding: 0;
-}
-
-/* Инлайн код (внутри строки текста) тоже делаем темненьким */
-#post p code, #post li code {
-    background-color: #444;
-    color: #fff;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-family: Consolas, "Monaco", "Courier New", monospace;
-    font-size: 85%;
-    border: none;
-}
-
-/* --- КАРТИНКИ И ЦИТАТЫ --- */
-#post img {
-    max-width: 100%; 
-    padding: 1em 0;
-}
-
-#post blockquote {
-    padding-left: 1em;
-    border-left: 5px solid #ddd;
-    font-style: italic;
-}
-
-#post .note {
-    padding-left: 1em;
-    border-left: 5px solid #a00;
-    font-style: italic;
+ul.posts span {
+    color: #aaa;
+    font-family: monospace;
+    font-size: 80%;
 }
