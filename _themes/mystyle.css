@@ -1,14 +1,6 @@
 /* === GLOBAL RESETS & DEFAULTS === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* More predictable sizing */
-}
-
-html, body {
-    height: 100%;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
 body {
     background-color: #ffffff;
     font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -18,15 +10,12 @@ body {
 }
 
 /* === HEADINGS (H1-H6) === */
-/* Now they have different sizes */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
-    text-align: left; /* Headers should be left-aligned */
+    margin: 1.5em 0 0.5em 0;
+    text-align: left;
 }
-
 h1 { font-size: 2.25em; }
 h2 { font-size: 1.75em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
 h3 { font-size: 1.5em; }
@@ -34,57 +23,28 @@ h4 { font-size: 1.25em; }
 h5 { font-size: 1.1em; }
 h6 { font-size: 1em; color: #777; }
 
-
 /* === LINKS & TEXT === */
-p {
-    margin-bottom: 1em;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* Strikethrough text */
-s, del {
-    color: #888;
-}
-
+p { margin-bottom: 1em; }
+a { color: #007bff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+s, del { color: #888; }
 
 /* === LISTS (UL/OL) === */
-/* Fixes indentation for sub-items */
 #post ul, #post ol {
     margin-bottom: 1em;
     padding-left: 2em;
     text-align: left;
 }
-#post ul ul, #post ol ol {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-#post li {
-    margin-bottom: 0.5em;
-}
-
+#post ul ul, #post ol ol { margin-top: 0.5em; margin-bottom: 0.5em; }
+#post li { margin-bottom: 0.5em; }
 
 /* === IMAGES === */
-/* Prevents text from justifying around the image */
-#post p:has(img) {
-    text-align: left; /* Or center if you prefer */
-}
-#post img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 1em;
-}
+#post p { text-align: justify; } /* Возвращаем justify для обычного текста */
+#post p:has(img) { text-align: left; } /* Убираем justify для абзацев с картинками */
+#post img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 1em; }
 
-
-/* === CODE BLOCKS === */
-/* 1. Base style for all <pre> blocks */
+/* === CODE BLOCKS (НАДЕЖНЫЙ МЕТОД) === */
+/* 1. Базовый стиль для всех блоков кода */
 #post pre {
     padding: 1em;
     margin: 1.5em 0;
@@ -96,21 +56,25 @@ s, del {
     font-family: "SF Mono", "Consolas", "Menlo", monospace;
 }
 
-/* 2. Style for standard code (light theme) */
-#post pre:not(.terminal) {
+/* 2. Стиль для стандартного кода (светлый) */
+#post pre {
     background-color: #f6f8fa;
     border: 1px solid #d0d7de;
     color: #24292f;
 }
 
-/* 3. Style for Terminal (dark theme) */
-#post pre.terminal {
+/* 3. Стиль для ТЕРМИНАЛА (темный) */
+/* Если внутри pre есть код с классом language-bash, language-shell и т.д. */
+#post pre:has(code.language-bash),
+#post pre:has(code.language-shell),
+#post pre:has(code.language-sh),
+#post pre:has(code.language-console) {
     background-color: #2d2d2d;
-    color: #f8f8f2;
     border: 1px solid #111;
+    color: #f8f8f2;
 }
 
-/* Inline code styles */
+/* Инлайн-код */
 #post code {
     font-family: "SF Mono", "Consolas", "Menlo", monospace;
     font-size: 0.9em;
@@ -118,112 +82,28 @@ s, del {
     padding: 0.2em 0.4em;
     border-radius: 3px;
 }
-
-/* Reset styles for code inside a <pre> block */
-#post pre code {
-    background-color: transparent;
-    padding: 0;
-    border: none;
-    font-size: 1em;
-}
+/* Сброс стилей для кода внутри pre */
+#post pre code { background-color: transparent; padding: 0; border: none; font-size: 1em; }
 
 /* === TABLES === */
-/* Basic but functional table styles */
-#post table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1em;
-    text-align: left;
-}
-#post th, #post td {
-    border: 1px solid #d0d7de;
-    padding: 0.5em 0.75em;
-}
-#post th {
-    font-weight: 600;
-    background-color: #f6f8fa;
-}
-#post tr:nth-child(even) {
-    background-color: #f6f8fa;
-}
+#post table { width: 100%; border-collapse: collapse; margin-bottom: 1em; text-align: left; }
+#post th, #post td { border: 1px solid #d0d7de; padding: 0.5em 0.75em; }
+#post th { font-weight: 600; background-color: #f6f8fa; }
+#post tr:nth-child(even) { background-color: #f6f8fa; }
 
+/* === HORIZONTAL RULE & BLOCKQUOTES === */
+hr { border: 0; border-top: 1px solid #eee; margin: 2em 0; }
+#post blockquote { padding-left: 1em; border-left: 4px solid #d0d7de; color: #6a737d; margin: 1.5em 0; }
 
-/* === HORIZONTAL RULE === */
-hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 2em 0;
-}
-
-
-/* === BLOCKQUOTES === */
-#post blockquote {
-    padding-left: 1em;
-    border-left: 4px solid #d0d7de;
-    color: #6a737d;
-    margin: 1.5em 0;
-}
-
-
-/* === SITE STRUCTURE (Your old styles, slightly adapted) === */
-.site {
-    font-size: 110%;
-    text-align: justify;
-    width: 48em; /* A bit wider for better readability */
-    max-width: 90%;
-    margin: 3em auto 2em auto;
-}
-
-.title {
-    color: #0a5494;
-    font-weight: bold;
-    margin-bottom: 2em;
-    text-align: left;
-}
-.site .title a {
-    color: #0a5494;
-    text-decoration: none;
-}
-.site .title a:hover {
-    color: black;
-}
-.site .title a.extra {
-    color: #aaa;
-    text-decoration: none;
-    margin-left: 1em;
-}
-
-.site .meta {
-    color: #777;
-    font-size: 0.9em;
-    margin-bottom: 2em;
-    text-align: left;
-}
-
-.site .footer {
-    font-size: 80%;
-    color: #666;
-    border-top: 4px solid #eee;
-    margin-top: 2em;
-    padding-top: 1em;
-    overflow: hidden;
-    text-align: left;
-}
-.site .footer .contact {
-    float: left;
-    margin-right: 3em;
-}
-
-ul.posts {
-    list-style-type: none;
-    margin-bottom: 2em;
-    text-align: left;
-}
-ul.posts li {
-    line-height: 1.75em;
-}
-ul.posts span {
-    color: #aaa;
-    font-family: monospace;
-    font-size: 80%;
-}
+/* === SITE STRUCTURE === */
+.site { font-size: 110%; text-align: justify; width: 48em; max-width: 90%; margin: 3em auto 2em auto; }
+.title { color: #0a5494; font-weight: bold; margin-bottom: 2em; text-align: left; }
+.site .title a { color: #0a5494; text-decoration: none; }
+.site .title a:hover { color: black; }
+.site .title a.extra { color: #aaa; text-decoration: none; margin-left: 1em; }
+.site .meta { color: #777; font-size: 0.9em; margin-bottom: 2em; text-align: left; }
+.site .footer { font-size: 80%; color: #666; border-top: 4px solid #eee; margin-top: 2em; padding-top: 1em; overflow: hidden; text-align: left; }
+.site .footer .contact { float: left; margin-right: 3em; }
+ul.posts { list-style-type: none; margin-bottom: 2em; text-align: left; }
+ul.posts li { line-height: 1.75em; }
+ul.posts span { color: #aaa; font-family: monospace; font-size: 80%; }
