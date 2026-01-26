@@ -64,7 +64,11 @@ def process_posts(env, config, global_context):
         if not post_date:
             post_date = datetime.date.today()
         
-        html_content = markdown.markdown(post.content, extensions=['fenced_code', 'attr_list'])
+        html_content = markdown.markdown(post.content, extensions=['fenced_code', 
+                                                                   'attr_list',
+                                                                   'tables',
+                                                                   'sane_lists',
+                                                                   'markdown.extensions.strike'])
         
         custom_slug = post.get("slug")
         post_title = post.get("title")
