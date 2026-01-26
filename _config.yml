@@ -1,0 +1,12 @@
+lang: en-us
+title: Luna SSG Site
+author: Your Name
+theme: mystyle.css
+
+menu:
+  - title: Home
+    url: /
+    
+sections:
+  - id: blog
+    title: "Latest Posts"
