@@ -64,7 +64,7 @@ def process_posts(env, config, global_context):
         if not post_date:
             post_date = datetime.date.today()
         
-        md = MarkdownIt()
+        md = MarkdownIt("gfm-like")
         html_content = md.render(post.content)
         
         custom_slug = post.get("slug")
