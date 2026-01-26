@@ -5,7 +5,7 @@ theme: mystyle.css
 
 menu:
   - title: Home
-    url: /
+    url: /luna-ssg/
     
 sections:
   - id: blog
