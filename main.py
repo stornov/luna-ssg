@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 import yaml
 import frontmatter
-import markdown
+from markdown_it import MarkdownIt
 from liquid import Environment, FileSystemLoader
 
 BASE_DIR = Path.cwd()
@@ -64,11 +64,8 @@ def process_posts(env, config, global_context):
         if not post_date:
             post_date = datetime.date.today()
         
-        html_content = markdown.markdown(post.content, extensions=['fenced_code', 
-                                                                   'attr_list',
-                                                                   'tables',
-                                                                   'sane_lists',
-                                                                   'pymdownx.tilde'])
+        md = MarkdownIt()
+        html_content = md.render(post.content)
         
         custom_slug = post.get("slug")
         post_title = post.get("title")

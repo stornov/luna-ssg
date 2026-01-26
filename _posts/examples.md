@@ -106,6 +106,7 @@ Done.
 ---
 
 ## Tables
+
 You can create tables with headers and aligned columns.
 
 | Feature         | Status      | Priority |
@@ -117,6 +118,7 @@ You can create tables with headers and aligned columns.
 ---
 
 ## Horizontal Rule
+
 A horizontal rule is created with three hyphens and is great for separating sections.
 
 ---
