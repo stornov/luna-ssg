@@ -40,7 +40,7 @@ You can combine them **like *this***.
 ## Blockquotes
 
 > This is a blockquote. It's a great way to highlight a section of text. You can quote people, or just make a point.
-
+---
 > Nested blockquotes are also possible.
 >> Just add another angle bracket.
 

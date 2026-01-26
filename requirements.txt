@@ -2,3 +2,4 @@ python-liquid
 python-frontmatter
 markdown
 pyyaml
+pymdown-extensions
