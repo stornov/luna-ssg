@@ -35,7 +35,7 @@
 <h2>Text Formatting</h2>
 <p><strong>This is bold text.</strong></p>
 <p><em>This is italic text.</em></p>
-<p><del>This was a mistake.</del></p>
+<p>~~This was a mistake.~~</p>
 <p>You can combine them <strong>like <em>this</em></strong>.</p>
 <hr />
 <h2>Blockquotes</h2>
@@ -54,9 +54,12 @@
 <h3>Unordered List</h3>
 <ul>
 <li>Item A</li>
-<li>Item B</li>
+<li>Item B
+<ul>
 <li>Sub-item 1</li>
 <li>Sub-item 2</li>
+</ul>
+</li>
 <li>Item C</li>
 </ul>
 <h3>Ordered List</h3>
@@ -69,7 +72,7 @@
 <h2>Links and Images</h2>
 <p>This is a <a href="https://www.google.com">link to Google</a>.</p>
 <p>Here is a placeholder image:</p>
-<p><img alt="A placeholder image of a landscape" src="https://placehold.co/600x300" /></p>
+<p><img src="https://placehold.co/600x300" alt="A placeholder image of a landscape" /></p>
 <hr />
 <h2>Code Blocks</h2>
 <h3>Inline Code</h3>
@@ -90,37 +93,17 @@ Done.
 <hr />
 <h2>Tables</h2>
 <p>You can create tables with headers and aligned columns.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Feature</th>
-<th style="text-align: center;">Status</th>
-<th style="text-align: right;">Priority</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Markdown Parser</td>
-<td style="text-align: center;">Implemented</td>
-<td style="text-align: right;">High</td>
-</tr>
-<tr>
-<td style="text-align: left;">Templating</td>
-<td style="text-align: center;">Implemented</td>
-<td style="text-align: right;">High</td>
-</tr>
-<tr>
-<td style="text-align: left;">Coffee Maker</td>
-<td style="text-align: center;">Future</td>
-<td style="text-align: right;">Low</td>
-</tr>
-</tbody>
-</table>
+<p>| Feature         | Status      | Priority |
+| :-------------- | :---------: | -------: |
+| Markdown Parser | Implemented |     High |
+| Templating      | Implemented |     High |
+| Coffee Maker    | Future      |      Low |</p>
 <hr />
 <h2>Horizontal Rule</h2>
 <p>A horizontal rule is created with three hyphens and is great for separating sections.</p>
 <hr />
 <p>That's all for now!</p>
+
 </div>
 
 <div class="footer">
