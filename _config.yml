@@ -17,11 +17,20 @@ sections:
   - id: tech
     title: "Technology"
 
-# Projects Section (New in v1.2)
-projects:
-  - title: Luna SSG
-    url: https://github.com/
-    description: "This is a demo project description."
-  - title: Another Project
-    url: https://google.com
-    description: "Link to your cool application."
+# Dynamic Bottom Sections (New in v1.3)
+# You can add as many lists as you want here
+bottom_sections:
+  - title: "Open Source Projects"
+    items:
+      - title: Luna SSG
+        url: https://github.com/yourname/luna-ssg
+        description: "My custom site engine."
+      - title: Another App
+        url: https://google.com
+        description: "A cool demo app."
+
+  - title: "My Reading List"
+    items:
+      - title: "The Pragmatic Programmer"
+        url: https://pragprog.com/
+        description: "Essential reading."

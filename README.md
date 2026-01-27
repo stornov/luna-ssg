@@ -1,76 +1,142 @@
-# 🌙 Luna SSG (v1.2)
+# 🌙 Luna SSG (v1.3)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.2.0-blue)
+![Version](https://img.shields.io/badge/version-1.3.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-**Luna SSG** is a lightweight, custom-built static site generator written in Python. Designed as a high-performance, developer-friendly alternative to Jekyll with native "Linklog" support.
+**Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
+
+It was designed as a high-performance, developer-friendly alternative to Jekyll. It converts Markdown files into a fully functional HTML website using Liquid templates, with zero Ruby dependencies.
 
 ---
 
 ## 🚀 Key Features
 
-* **Pure Python Core**: Simple logic in a single `main.py` engine.
-* **Smart Categorization**: Groups posts into sections (Blog, Games, Dev) via `_config.yml`.
-* **Linklog Support (v1.2)**: Ability to create "link posts" that redirect directly to external URLs (Daring Fireball style).
-* **Projects Portfolio (v1.2)**: Dedicated section for showcasing projects in the footer.
-* **Auto-Dark Mode**: Terminal code blocks (`bash`, `sh`) render with a dark theme automatically.
-* **GitHub Pages Ready**: Auto-generates `.nojekyll` to bypass Jekyll limits.
+* **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
+* **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid`.
+* **Dynamic Layouts (v1.3)**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
+* **Smart Categorization**: Automatically groups posts into sections (e.g., Blog, Games, Dev).
+* **Linklog Support**: Create "Daring Fireball" style external link posts.
+* **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
+* **Template Switching**: Separate layouts for standard posts (with dates) and static pages (like 404 or About).
+* **Developer UI**:
+  * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
+  * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
+* **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
+
+## 🛠️ Tech Stack
+
+* **python-liquid**: Templating engine for flexible HTML layouts.
+* **python-frontmatter**: For parsing YAML metadata in Markdown files.
+* **markdown-it-py**: Fast and CommonMark-compliant Markdown parser (replaces standard `markdown` lib).
+* **pyyaml**: For project configuration management.
+
+## 📂 Project Structure
+
+```text
+.
+├── main.py               # The core build script (The Engine)
+├── _config.yml           # Global site & navigation settings
+├── requirements.txt      # Python dependencies
+├── _posts/               # Markdown content files
+├── _templates/           # Liquid HTML templates
+│   ├── header.html       # Shared site header
+│   ├── footer.html       # Shared site footer
+│   ├── index.html        # Homepage with section logic
+│   ├── post.html         # Template for blog articles (with date)
+│   └── page.html         # Template for static pages (no date)
+├── _themes/              # CSS Stylesheets
+└── .github/workflows/    # GitHub Actions automation script
+```
 
 ## ⚙️ Configuration
 
-Control your site structure via `_config.yml`.
+Manage your site structure via `_config.yml` without touching any Python code:
 
 ```yaml
 title: My Awesome Site
 theme: mystyle.css
 
-# 1. Navigation Menu
+# 1. Top Navigation Menu
 menu:
   - title: Home
     url: /
+  - title: GitHub
+    url: https://github.com/
 
-# 2. Content Categories
+# 2. Homepage Content Sections
+# 'id' must match the 'category' in your .md files
 sections:
   - id: blog
-    title: "Latest Thoughts"
+    title: "Latest Blog Posts"
+  - id: tech
+    title: "Technology"
 
-# 3. Projects / Portfolio (New in v1.2)
-# Displayed at the bottom of the home page
-projects:
-  - title: Luna SSG
-    url: https://github.com/yourname/luna-ssg
-    description: "My custom python engine."
-  - title: Another App
-    url: https://google.com
-    description: "Something cool I made."
+# 3. Dynamic Bottom Sections (New in v1.3)
+# You can add as many lists as you want (Projects, Books, Friends, etc.)
+bottom_sections:
+  - title: "My Projects"
+    items:
+      - title: Luna SSG
+        url: https://github.com/yourname/luna-ssg
+        description: "My custom site engine."
+      - title: Another App
+        url: https://google.com
+        description: "A cool demo app."
+
+  - title: "Reading List"
+    items:
+      - title: "Clean Code"
+        url: https://amazon.com
+        description: "Essential reading."
 ```
 
 ## ✍️ Writing Content
 
-Create `.md` files in the `_posts/` directory.
+To create a new post or page, add a `.md` file to the `_posts/` directory.
 
-### Metadata Options
+### Metadata (Frontmatter)
 
-```yaml
+Each file starts with a YAML block. Here is the configuration:
+
+```markdown
 ---
-title: "My New Post"
+title: "How to use Pathlib"
 date: 2026-01-27
-category: blog
-link: https://external-site.com/cool-article  # <--- NEW: External Link
-slug: my-custom-url
-published: true
-template: post
+category: tech          # Places post in the "Technology" section
+link: https://python.org # Optional: Makes this a "Linklog" post (redirects externally)
+slug: pathlib-guide     # Custom URL (optional)
+published: true         # Set to false to hide from lists
+template: post          # Use 'page' to hide date/location
+location: "Ozersk"
 ---
 ```
 
-### 🔗 Linklog Posts
+### 📝 Supported Markdown Features
 
-If you add a `link: URL` field to your Frontmatter:
+The generator uses `markdown-it-py`, ensuring strict adherence to CommonMark standards with extra features enabled:
 
-1. The post title on the homepage will point **directly** to that URL.
-2. An arrow (`→`) will be appended to the title.
-3. This is perfect for sharing interesting articles from other sites.
+* **Standard Markdown**: Headings, lists, links, images, blockquotes.
+* **Tables**: Fully supported with header alignment.
+* **Strikethrough**: Use `~~text~~` to cross out words.
+* **Code Blocks**: Fenced blocks with automatic syntax highlighting.
+* **Nested Lists**: Proper indentation for multi-level lists.
+
+### 🖥️ Smart Code Styling
+
+No extra configuration needed! The engine automatically detects the language and applies the correct theme:
+
+1. **Light Theme**: For `python`, `javascript`, `html`, etc.
+2. **Dark Terminal Theme**: For `bash`, `sh`, `console`, `shell`.
+
+**Example (Dark Mode):**
+
+````markdown
+```bash
+$ git push origin main
+# This block renders in dark mode automatically
+```
+````
 
 ## 📦 Quick Start
 
@@ -94,7 +160,6 @@ If you add a `link: URL` field to your Frontmatter:
     ```
 
 4. **Preview locally**:
-
     Start a simple Python server to view the generated site:
 
     ```bash
@@ -105,10 +170,11 @@ If you add a `link: URL` field to your Frontmatter:
 
 ## 📜 Version History
 
-* **v1.2**: Added Linklog functionality (external posts) and Projects section.
+* **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
+* **v1.2**: Added Linklog functionality and Projects section.
 * **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
 * **v1.0**: Initial release.
 
 ## 📄 License
 
-MIT License.
+This project is open source and available under the [MIT License](LICENSE).
