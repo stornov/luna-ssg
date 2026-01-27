@@ -10,12 +10,12 @@
 
 ## 🚀 Key Features
 
-*   **Pure Python Core**: Simple logic in a single `main.py` engine.
-*   **Smart Categorization**: Groups posts into sections (Blog, Games, Dev) via `_config.yml`.
-*   **Linklog Support (v1.2)**: Ability to create "link posts" that redirect directly to external URLs (Daring Fireball style).
-*   **Projects Portfolio (v1.2)**: Dedicated section for showcasing projects in the footer.
-*   **Auto-Dark Mode**: Terminal code blocks (`bash`, `sh`) render with a dark theme automatically.
-*   **GitHub Pages Ready**: Auto-generates `.nojekyll` to bypass Jekyll limits.
+* **Pure Python Core**: Simple logic in a single `main.py` engine.
+* **Smart Categorization**: Groups posts into sections (Blog, Games, Dev) via `_config.yml`.
+* **Linklog Support (v1.2)**: Ability to create "link posts" that redirect directly to external URLs (Daring Fireball style).
+* **Projects Portfolio (v1.2)**: Dedicated section for showcasing projects in the footer.
+* **Auto-Dark Mode**: Terminal code blocks (`bash`, `sh`) render with a dark theme automatically.
+* **GitHub Pages Ready**: Auto-generates `.nojekyll` to bypass Jekyll limits.
 
 ## ⚙️ Configuration
 
@@ -51,6 +51,7 @@ projects:
 Create `.md` files in the `_posts/` directory.
 
 ### Metadata Options
+
 ```yaml
 ---
 title: "My New Post"
@@ -64,30 +65,50 @@ template: post
 ```
 
 ### 🔗 Linklog Posts
+
 If you add a `link: URL` field to your Frontmatter:
-1.  The post title on the homepage will point **directly** to that URL.
-2.  An arrow (`→`) will be appended to the title.
-3.  This is perfect for sharing interesting articles from other sites.
+
+1. The post title on the homepage will point **directly** to that URL.
+2. An arrow (`→`) will be appended to the title.
+3. This is perfect for sharing interesting articles from other sites.
 
 ## 📦 Quick Start
 
-1.  **Clone the repo**:
+1. **Use this template** (or clone the repo):
+
     ```bash
     git clone https://github.com/yourname/luna-ssg.git
+    cd luna-ssg
     ```
-2.  **Install dependencies**:
+
+2. **Install dependencies**:
+
     ```bash
     pip install -r requirements.txt
     ```
-3.  **Build**:
+
+3. **Build the site**:
+
     ```bash
     python main.py
     ```
 
+4. **Preview locally**:
+
+    Start a simple Python server to view the generated site:
+
+    ```bash
+    python -m http.server --directory _site
+    ```
+
+    Then open [http://localhost:8000](http://localhost:8000) in your browser.
+
 ## 📜 Version History
-*   **v1.2**: Added Linklog functionality (external posts) and Projects section.
-*   **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
-*   **v1.0**: Initial release.
+
+* **v1.2**: Added Linklog functionality (external posts) and Projects section.
+* **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
+* **v1.0**: Initial release.
 
 ## 📄 License
+
 MIT License.
