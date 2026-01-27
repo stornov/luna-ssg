@@ -1,4 +1,3 @@
-/* === GLOBAL RESETS & DEFAULTS === */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -9,7 +8,6 @@ body {
     line-height: 1.6;
 }
 
-/* === HEADINGS (H1-H6) === */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.3;
@@ -23,50 +21,40 @@ h4 { font-size: 1.25em; }
 h5 { font-size: 1.1em; }
 h6 { font-size: 1em; color: #777; }
 
-/* === LINKS & TEXT === */
 p { margin-bottom: 1em; }
 a { color: #007bff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 s, del { color: #888; }
 
-/* === LISTS (UL/OL) === */
-/* Базовые стили для списков первого уровня */
 #post ul, #post ol {
     margin-bottom: 1em;
-    padding-left: 2em; /* Начальный отступ для точек */
+    padding-left: 2em;
     text-align: left;
 }
 
-/* Стили для всех элементов списка */
 #post li {
     margin-bottom: 0.5em;
-    padding-left: 0.5em; /* Небольшой отступ текста от маркера */
+    padding-left: 0.5em;
 }
 
-/* --- ВАЖНОЕ ИЗМЕНЕНИЕ --- */
-/* Стиль для ВЛОЖЕННЫХ списков (второй и последующие уровни) */
 #post ul ul, #post ul ol, #post ol ul, #post ol ol {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    /* Добавляем дополнительный отступ, чтобы визуально сдвинуть вложенный список вправо */
+    
     padding-left: 1.5em;
 }
 
-/* Меняем маркеры для вложенных списков для наглядности */
 #post ul ul li {
-    list-style-type: circle; /* Пустой кружок */
+    list-style-type: circle;
 }
 #post ul ul ul li {
-    list-style-type: square; /* Квадратик */
+    list-style-type: square;
 }
 
-/* === IMAGES === */
-#post p { text-align: justify; } /* Возвращаем justify для обычного текста */
-#post p:has(img) { text-align: left; } /* Убираем justify для абзацев с картинками */
+#post p { text-align: justify; }
+#post p:has(img) { text-align: left; }
 #post img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 1em; }
 
-/* === CODE BLOCKS (НАДЕЖНЫЙ МЕТОД) === */
-/* 1. Базовый стиль для всех блоков кода */
 #post pre {
     padding: 1em;
     margin: 1.5em 0;
@@ -78,15 +66,12 @@ s, del { color: #888; }
     font-family: "SF Mono", "Consolas", "Menlo", monospace;
 }
 
-/* 2. Стиль для стандартного кода (светлый) */
 #post pre {
     background-color: #f6f8fa;
     border: 1px solid #d0d7de;
     color: #24292f;
 }
 
-/* 3. Стиль для ТЕРМИНАЛА (темный) */
-/* Если внутри pre есть код с классом language-bash, language-shell и т.д. */
 #post pre:has(code.language-bash),
 #post pre:has(code.language-shell),
 #post pre:has(code.language-sh),
@@ -96,7 +81,6 @@ s, del { color: #888; }
     color: #f8f8f2;
 }
 
-/* Инлайн-код */
 #post code {
     font-family: "SF Mono", "Consolas", "Menlo", monospace;
     font-size: 0.9em;
@@ -104,20 +88,17 @@ s, del { color: #888; }
     padding: 0.2em 0.4em;
     border-radius: 3px;
 }
-/* Сброс стилей для кода внутри pre */
+
 #post pre code { background-color: transparent; padding: 0; border: none; font-size: 1em; }
 
-/* === TABLES === */
 #post table { width: 100%; border-collapse: collapse; margin-bottom: 1em; text-align: left; }
 #post th, #post td { border: 1px solid #d0d7de; padding: 0.5em 0.75em; }
 #post th { font-weight: 600; background-color: #f6f8fa; }
 #post tr:nth-child(even) { background-color: #f6f8fa; }
 
-/* === HORIZONTAL RULE & BLOCKQUOTES === */
 hr { border: 0; border-top: 1px solid #eee; margin: 2em 0; }
 #post blockquote { padding-left: 1em; border-left: 4px solid #d0d7de; color: #6a737d; margin: 1.5em 0; }
 
-/* === SITE STRUCTURE === */
 .site { font-size: 110%; text-align: justify; width: 48em; max-width: 90%; margin: 3em auto 2em auto; }
 .title { color: #0a5494; font-weight: bold; margin-bottom: 2em; text-align: left; }
 .site .title a { color: #0a5494; text-decoration: none; }
