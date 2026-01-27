@@ -3,22 +3,18 @@ title: Luna SSG Template
 author: Your Name
 theme: mystyle.css
 
-# Navigation
 menu:
   - title: Home
     url: /luna-ssg/
   - title: GitHub
     url: https://github.com/
 
-# Categories
 sections:
   - id: blog
     title: "Latest Posts"
   - id: tech
     title: "Technology"
 
-# Dynamic Bottom Sections (New in v1.3)
-# You can add as many lists as you want here
 bottom_sections:
   - title: "Open Source Projects"
     items:
@@ -34,3 +30,23 @@ bottom_sections:
       - title: "The Pragmatic Programmer"
         url: https://pragprog.com/
         description: "Essential reading."
+
+footer:
+  - title: Contacts
+    links:
+      - text: contact@example.com
+        url: mailto:contact@example.com
+      - text: City, Country
+        url: null
+  - title: Socials
+    links:
+      - text: GitHub
+        url: https://github.com/
+      - text: Website
+        url: https://example.com
+  - title: Info
+    links:
+      - text: © 2026 Your Name
+        url: null
+      - text: Powered by Luna SSG
+        url: https://github.com/stornov/luna-ssg
