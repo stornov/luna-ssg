@@ -1,12 +1,27 @@
 lang: en-us
-title: Luna SSG Site
+title: Luna SSG Template
 author: Your Name
 theme: mystyle.css
 
+# Navigation
 menu:
   - title: Home
-    url: /luna-ssg/
-    
+    url: /
+  - title: GitHub
+    url: https://github.com/
+
+# Categories
 sections:
   - id: blog
     title: "Latest Posts"
+  - id: tech
+    title: "Technology"
+
+# Projects Section (New in v1.2)
+projects:
+  - title: Luna SSG
+    url: https://github.com/
+    description: "This is a demo project description."
+  - title: Another Project
+    url: https://google.com
+    description: "Link to your cool application."

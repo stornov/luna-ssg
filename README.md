@@ -1,125 +1,93 @@
-# 🌙 Luna SSG
+# 🌙 Luna SSG (v1.2)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-**Luna SSG** is a lightweight, custom-built static site generator written in Python.
-
-It was designed as a high-performance, developer-friendly alternative to Jekyll. It converts Markdown files into a fully functional HTML website using Liquid templates, with zero Ruby dependencies.
+**Luna SSG** is a lightweight, custom-built static site generator written in Python. Designed as a high-performance, developer-friendly alternative to Jekyll with native "Linklog" support.
 
 ---
 
 ## 🚀 Key Features
 
-* **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
-* **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid`.
-* **Smart Categorization**: Automatically groups posts into sections (e.g., Blog, Games, Dev) based on `_config.yml`.
-* **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
-* **Template Switching**: Separate layouts for standard posts (with dates) and static pages (like 404 or About).
-* **Developer UI**:
-  * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
-  * **Syntax Highlighting**: Integrated `highlight.js`.
-* **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
-
-## 🛠️ Tech Stack
-
-* **Engine**: Python 3.x
-* **python-liquid**: Templating engine for flexible HTML layouts.
-* **python-frontmatter**: For parsing YAML metadata in Markdown files.
-* **markdown-it-py**: Fast and CommonMark-compliant Markdown parser (replaces standard `markdown` lib).
-* **pyyaml**: For project configuration management.
+*   **Pure Python Core**: Simple logic in a single `main.py` engine.
+*   **Smart Categorization**: Groups posts into sections (Blog, Games, Dev) via `_config.yml`.
+*   **Linklog Support (v1.2)**: Ability to create "link posts" that redirect directly to external URLs (Daring Fireball style).
+*   **Projects Portfolio (v1.2)**: Dedicated section for showcasing projects in the footer.
+*   **Auto-Dark Mode**: Terminal code blocks (`bash`, `sh`) render with a dark theme automatically.
+*   **GitHub Pages Ready**: Auto-generates `.nojekyll` to bypass Jekyll limits.
 
 ## ⚙️ Configuration
 
-The site is controlled via `_config.yml`. No code changes required.
+Control your site structure via `_config.yml`.
 
 ```yaml
 title: My Awesome Site
 theme: mystyle.css
 
-# Navigation Menu
+# 1. Navigation Menu
 menu:
   - title: Home
     url: /
-  - title: GitHub
-    url: https://github.com/username
 
-# Content Categories
-# 'id' matches the category in your .md files
+# 2. Content Categories
 sections:
   - id: blog
     title: "Latest Thoughts"
-  - id: programming
-    title: "Dev Logs"
+
+# 3. Projects / Portfolio (New in v1.2)
+# Displayed at the bottom of the home page
+projects:
+  - title: Luna SSG
+    url: https://github.com/yourname/luna-ssg
+    description: "My custom python engine."
+  - title: Another App
+    url: https://google.com
+    description: "Something cool I made."
 ```
 
 ## ✍️ Writing Content
 
 Create `.md` files in the `_posts/` directory.
 
-### Frontmatter Options
-
+### Metadata Options
 ```yaml
 ---
-title: "My New Post"        # Required
-date: 2026-01-26            # Optional (defaults to today)
-category: blog              # Matches section ID
-slug: my-custom-url         # Optional
-published: true             # Set false to hide
-template: post              # 'post' (default) or 'page' (no date)
+title: "My New Post"
+date: 2026-01-27
+category: blog
+link: https://external-site.com/cool-article  # <--- NEW: External Link
+slug: my-custom-url
+published: true
+template: post
 ---
 ```
 
-### Smart Code Styling
-
-The engine detects the language of your code blocks.
-
-* **Python/JS/HTML**: Renders in a light theme with syntax highlighting.
-* **Bash/Console**: Renders in a **dark terminal style** automatically.
-
-Just use standard Markdown:
-
-````markdown
-```bash
-$ git push origin main
-# This block will be dark automatically
-```
-````
+### 🔗 Linklog Posts
+If you add a `link: URL` field to your Frontmatter:
+1.  The post title on the homepage will point **directly** to that URL.
+2.  An arrow (`→`) will be appended to the title.
+3.  This is perfect for sharing interesting articles from other sites.
 
 ## 📦 Quick Start
 
-1. **Use this template** (or clone the repo):
-
+1.  **Clone the repo**:
     ```bash
     git clone https://github.com/yourname/luna-ssg.git
     ```
-
-2. **Install dependencies**:
-
+2.  **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
-
-3. **Build the site**:
-
+3.  **Build**:
     ```bash
     python main.py
     ```
 
-4. **Preview**:
-
-    ```bash
-    python -m http.server --directory _site
-    ```
-
-    Open `http://localhost:8000`.
-
-## 🤖 CI/CD Deployment
-
-This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`).
-Simply push to the `main` branch, and the site will be built and deployed to the `gh-pages` branch automatically.
+## 📜 Version History
+*   **v1.2**: Added Linklog functionality (external posts) and Projects section.
+*   **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
+*   **v1.0**: Initial release.
 
 ## 📄 License
-
-MIT License. Feel free to use Luna SSG for your personal blog!
+MIT License.
