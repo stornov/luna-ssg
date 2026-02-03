@@ -1,7 +1,7 @@
 # 🌙 Luna SSG (v1.3)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.3.0-blue)
+![Version](https://img.shields.io/badge/version-1.4.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -14,7 +14,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 
 * **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
 * **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid`.
-* **Dynamic Layouts (v1.3)**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
+* **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
 * **Smart Categorization**: Automatically groups posts into sections (e.g., Blog, Games, Dev).
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
 * **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
@@ -22,6 +22,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 * **Developer UI**:
   * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
   * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
+  * **Local Media Support (v1.4)**: Store images and files locally in `_media` folder.
 * **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
 
 ## 🛠️ Tech Stack
@@ -108,7 +109,7 @@ link: https://python.org # Optional: Makes this a "Linklog" post (redirects exte
 slug: pathlib-guide     # Custom URL (optional)
 published: true         # Set to false to hide from lists
 template: post          # Use 'page' to hide date/location
-location: "Ozersk"
+location: "Somewhere"
 ---
 ```
 
@@ -137,6 +138,20 @@ $ git push origin main
 # This block renders in dark mode automatically
 ```
 ````
+
+## 🖼️ Images & Media
+
+You can store images locally instead of uploading them to external sites.
+
+1. Place your files in the `_media/` directory.
+2. Reference them in Markdown using the absolute path `/media/filename.ext`.
+
+**Example:**
+If you have a file `_media/example.png`:
+
+```markdown
+![My Image](/media/example.png)
+```
 
 ## 📦 Quick Start
 
@@ -170,6 +185,7 @@ $ git push origin main
 
 ## 📜 Version History
 
+* **v1.4**: Added `_media` folder support for hosting local images and assets
 * **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
 * **v1.2**: Added Linklog functionality and Projects section.
 * **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
