@@ -22,7 +22,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 * **Developer UI**:
   * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
   * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
-  * **Local Media Support (v1.4)**: Store images and files locally in `_media` folder.
+* **Local Media Support (v1.4)**: Store images and files locally in `_media` folder.
 * **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
 
 ## 🛠️ Tech Stack
