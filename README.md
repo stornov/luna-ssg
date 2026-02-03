@@ -1,4 +1,4 @@
-# 🌙 Luna SSG (v1.3)
+# 🌙 Luna SSG (v1.4)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.4.0-blue)
