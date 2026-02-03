@@ -47,6 +47,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 │   ├── post.html         # Template for blog articles (with date)
 │   └── page.html         # Template for static pages (no date)
 ├── _themes/              # CSS Stylesheets
+├── _media/               # Local images and static assets
 └── .github/workflows/    # GitHub Actions automation script
 ```
 
