@@ -80,7 +80,7 @@ bottom_sections:
   - title: "My Projects"
     items:
       - title: Luna SSG
-        url: https://github.com/yourname/luna-ssg
+        url: https://github.com/stornov/luna-ssg
         description: "My custom site engine."
       - title: Another App
         url: https://google.com
@@ -159,7 +159,7 @@ If you have a file `_media/example.png`:
 1. **Use this template** (or clone the repo):
 
     ```bash
-    git clone https://github.com/yourname/luna-ssg.git
+    git clone https://github.com/stornov/luna-ssg.git
     cd luna-ssg
     ```
 
