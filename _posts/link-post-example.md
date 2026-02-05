@@ -1,7 +1,7 @@
 ---
 title: "Linklog Example (External Link)"
 date: 2026-01-27
-category: blog
+section: blog
 link: https://www.python.org/
 ---
 

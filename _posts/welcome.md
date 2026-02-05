@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Luna SSG"
 date: 2026-01-26
-category: blog
+section: blog
 slug: welcome
 ---
 

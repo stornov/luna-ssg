@@ -1,7 +1,7 @@
 ---
 title: "Markdown Features Demo"
 date: 2026-01-25
-category: tech
+section: tech
 slug: markdown-demo
 ---
 

@@ -13,9 +13,9 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ## 🚀 Key Features
 
 * **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
-* **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid`.
+* **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid` with inheritance support (`extends`, `block`).
 * **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
-* **Smart Categorization**: Automatically groups posts into sections (e.g., Blog, Games, Dev).
+* **Smart Sections**: Automatically groups posts into sections (e.g., Blog, Games, Dev) based on the `section` field.
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
 * **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
 * **Template Switching**: Separate layouts for standard posts (with dates) and static pages (like 404 or About).
@@ -41,8 +41,8 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ├── requirements.txt      # Python dependencies
 ├── _posts/               # Markdown content files
 ├── _templates/           # Liquid HTML templates
-│   ├── header.html       # Shared site header
-│   ├── footer.html       # Shared site footer
+│   ├── base.html         # Base site skeleton (<html>, <head>, <body>)
+│   ├── footer.html       # Shared site footer content
 │   ├── index.html        # Homepage with section logic
 │   ├── post.html         # Template for blog articles (with date)
 │   └── page.html         # Template for static pages (no date)
@@ -67,7 +67,7 @@ menu:
     url: https://github.com/
 
 # 2. Homepage Content Sections
-# 'id' must match the 'category' in your .md files
+# 'id' must match the 'section' in your .md files
 sections:
   - id: blog
     title: "Latest Blog Posts"
@@ -105,7 +105,7 @@ Each file starts with a YAML block. Here is the configuration:
 ---
 title: "How to use Pathlib"
 date: 2026-01-27
-category: tech          # Places post in the "Technology" section
+section: tech           # Places post in the "Technology" section
 link: https://python.org # Optional: Makes this a "Linklog" post (redirects externally)
 slug: pathlib-guide     # Custom URL (optional)
 published: true         # Set to false to hide from lists
@@ -186,7 +186,7 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-* **v1.4**: Added `_media` folder support for hosting local images and assets
+* **v1.4**: Added `_media` support, switched to Jinja2-style inheritance (`base.html`), renamed `category` to `section`.
 * **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
 * **v1.2**: Added Linklog functionality and Projects section.
 * **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
