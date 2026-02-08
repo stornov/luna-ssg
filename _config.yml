@@ -6,6 +6,8 @@ theme: mystyle.css
 menu:
   - title: Home
     url: /luna-ssg/
+  - title: Archive
+    url: /luna-ssg/archive.html
   - title: GitHub
     url: https://github.com/
 
