@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.4)
+# 🌙 Luna SSG (v1.5)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.4.0-blue)
+![Version](https://img.shields.io/badge/version-1.5.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -13,16 +13,17 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ## 🚀 Key Features
 
 * **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
-* **Liquid Templating**: Native support for logic-based HTML templates via `python-liquid` with inheritance support (`extends`, `block`).
+* **Liquid Templating**: Native support for logic-based HTML templates with **inheritance** (`base.html`, `{% extends %}`).
 * **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
-* **Smart Sections**: Automatically groups posts into sections (e.g., Blog, Games, Dev) based on the `section` field.
+* **Smart Sections**: Automatically groups posts into structural sections (e.g., Blog, Games) based on the `section` field.
+* **Auto-Generated Archive**: Creates a categorized `/archive.html` page for all your blog posts.
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
 * **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
 * **Template Switching**: Separate layouts for standard posts (with dates) and static pages (like 404 or About).
 * **Developer UI**:
   * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
   * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
-* **Local Media Support (v1.4)**: Store images and files locally in `_media` folder.
+* **Local Media Support**: Store images and files locally in `_media` folder.
 * **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
 
 ## 🛠️ Tech Stack
@@ -44,6 +45,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 │   ├── base.html         # Base site skeleton (<html>, <head>, <body>)
 │   ├── footer.html       # Shared site footer content
 │   ├── index.html        # Homepage with section logic
+│   ├── archive.html      # Categorized archive page
 │   ├── post.html         # Template for blog articles (with date)
 │   └── page.html         # Template for static pages (no date)
 ├── _themes/              # CSS Stylesheets
@@ -63,6 +65,8 @@ theme: mystyle.css
 menu:
   - title: Home
     url: /
+  - title: Archive
+    url: /luna-ssg/archive.html
   - title: GitHub
     url: https://github.com/
 
@@ -105,7 +109,8 @@ Each file starts with a YAML block. Here is the configuration:
 ---
 title: "How to use Pathlib"
 date: 2026-01-27
-section: tech           # Places post in the "Technology" section
+section: tech           # Structural: Places post in the "Technology" section on Home
+category: Python        # Semantic: Groups post under "Python" in the Archive
 link: https://python.org # Optional: Makes this a "Linklog" post (redirects externally)
 slug: pathlib-guide     # Custom URL (optional)
 published: true         # Set to false to hide from lists
@@ -186,7 +191,8 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-* **v1.4**: Added `_media` support, switched to Jinja2-style inheritance (`base.html`), renamed `category` to `section`.
+* **v1.5**: Introduced template inheritance (`base.html`), added `archive.html` generator, and split logic into `section` (structure) vs `category` (semantic).
+* **v1.4**: Added `_media` folder support for hosting local images and assets.
 * **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
 * **v1.2**: Added Linklog functionality and Projects section.
 * **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
