@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.6.0)
+# 🌙 Luna SSG (v1.6.2)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.6.0-blue)
+![Version](https://img.shields.io/badge/version-1.6.2-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -24,6 +24,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
   * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
   * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
 * **Local Media Support**: Store images and files locally in `_media` folder.
+* **Subfolder Portability**: Support for hosting on both root domains and project subfolders (like `username.github.io/repo/`) via the `baseurl` setting.
 * **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
 * **Smart Homepage**: Displays only the latest 10 posts to keep the main page clean.
 * **Auto-Generated Archive**: Creates a categorized `/archive.html` page with post counts.
@@ -65,6 +66,7 @@ Manage your site structure via `_config.yml` without touching any Python code:
 ```yaml
 title: My Awesome Site
 theme: mystyle.css
+baseurl: "/luna-ssg"  # NEW: Use "/repo-name" for project pages, or "" for root domains
 
 # 1. Top Navigation Menu
 menu:
@@ -196,7 +198,9 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-* **v1.6**: Added chronological Blog page, post counts in subtitles, limited homepage to 10 posts, and unified typography.
+* **v1.6.2**: Added `baseurl` support for improved portability between root domains and subfolders.
+* **v1.6.1**: Fixed heading hierarchy (distinguished H1 and H2 sizes).
+* **v1.6.0**: Added chronological Blog page, post counts in subtitles, limited homepage to 10 posts, and unified typography.
 * **v1.5**: Introduced template inheritance (`base.html`), added `archive.html` generator, and split logic into `section` (structure) vs `category` (semantic).
 * **v1.4**: Added `_media` folder support for hosting local images and assets.
 * **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
