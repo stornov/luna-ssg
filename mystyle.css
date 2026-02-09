@@ -52,8 +52,26 @@ s, del { color: #888; }
 }
 
 #post p { text-align: justify; }
-#post p:has(img) { text-align: left; }
-#post img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 1em; }
+
+#post p:has(img) { 
+    text-align: center;
+    margin: 2em 0;
+}
+#post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#post p:has(img) em {
+    display: block;
+    margin-top: 0.8em;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+}
 
 #post pre {
     padding: 1em;
