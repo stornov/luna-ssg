@@ -12,24 +12,24 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 
 ## 🚀 Key Features
 
+### 🛠️ Core Engine
 * **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
-* **Liquid Templating**: Native support for logic-based HTML templates with **inheritance** (`base.html`, `{% extends %}`).
-* **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
-* **Smart Sections**: Automatically groups posts into structural sections (e.g., Blog, Games) based on the `section` field.
-* **Auto-Generated Archive**: Creates a categorized `/archive.html` page for all your blog posts.
-* **Linklog Support**: Create "Daring Fireball" style external link posts.
-* **Intelligent URLs**: Auto-generates clean slugs from titles (or uses custom ones).
-* **Template Switching**: Separate layouts for standard posts (with dates) and static pages (like 404 or About).
-* **Developer UI**:
-  * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
-  * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
-* **Local Media Support**: Store images and files locally in `_media` folder.
-* **Subfolder Portability**: Support for hosting on both root domains and project subfolders (like `username.github.io/repo/`) via the `baseurl` setting.
+* **Liquid Templating**: Native support for logic-based HTML templates with inheritance (`base.html`, `{% extends %}`).
+* **Subfolder Portability**: Support for root domains or project subfolders (e.g., `username.github.io/repo/`) via the `baseurl` setting.
+* **GitHub Pages Ready**: Automatically generates `.nojekyll` and includes deployment workflows.
+
+### 📝 Content Management
+* **Smart Sections & Archive**: Automatically groups posts into structural sections for the homepage and creates a categorized `/archive.html` with post counts.
 * **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
-* **Smart Homepage**: Displays only the latest 10 posts to keep the main page clean.
-* **Auto-Generated Archive**: Creates a categorized `/archive.html` page with post counts.
-* **Refined Typography**: Unified heading sizes and metadata styles for a professional look.
-* **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
+* **Smart Homepage**: Displays only the latest 10 posts to keep the landing page clean.
+* **Linklog Support**: Create "Daring Fireball" style external link posts.
+* **Intelligent URLs**: Auto-generates clean slugs from titles or uses custom ones from frontmatter.
+
+### 🎨 Design & DX (Developer Experience)
+* **Smart Code Styling**: Console blocks (`bash`, `sh`, `console`) automatically render with a dark terminal theme, while other languages use standard syntax highlighting.
+* **Refined Typography**: Unified heading sizes and metadata styles for a professional, minimal look.
+* **Local Media Support**: Automatic processing of images from the `_media` folder (including WebP conversion).
+* **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
 
 ## 🛠️ Tech Stack
 
