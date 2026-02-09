@@ -73,7 +73,7 @@ menu:
   - title: Home
     url: /
   - title: Archive
-    url: /luna-ssg/archive.html
+    url: /archive.html
   - title: GitHub
     url: https://github.com/
 
