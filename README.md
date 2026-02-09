@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.6.4)
+# 🌙 Luna SSG (v1.6.5)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.6.4-blue)
+![Version](https://img.shields.io/badge/version-1.6.5-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -198,7 +198,7 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-Current version: **v1.6.4**
+Current version: **v1.6.5**
 
 The full list of changes and roadmap is available in [CHANGELOG.md](./CHANGELOG.md).
 
