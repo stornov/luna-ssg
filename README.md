@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.5.0)
+# 🌙 Luna SSG (v1.6.0)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.5.0-blue)
+![Version](https://img.shields.io/badge/version-1.6.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -24,6 +24,10 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
   * **Auto-Dark Mode for Code**: Console/Terminal code blocks (`bash`, `sh`) automatically render with a dark theme.
   * **Syntax Highlighting**: Integrated `highlight.js` for all languages.
 * **Local Media Support**: Store images and files locally in `_media` folder.
+* **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
+* **Smart Homepage**: Displays only the latest 10 posts to keep the main page clean.
+* **Auto-Generated Archive**: Creates a categorized `/archive.html` page with post counts.
+* **Refined Typography**: Unified heading sizes and metadata styles for a professional look.
 * **GitHub Pages Ready**: Automatically generates `.nojekyll` to bypass Jekyll build limits.
 
 ## 🛠️ Tech Stack
@@ -44,7 +48,8 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ├── _templates/           # Liquid HTML templates
 │   ├── base.html         # Base site skeleton (<html>, <head>, <body>)
 │   ├── footer.html       # Shared site footer content
-│   ├── index.html        # Homepage with section logic
+│   ├── index.html        # Homepage (latest 10 posts)
+│   ├── blog.html         # Chronological list (Year > Month)
 │   ├── archive.html      # Categorized archive page
 │   ├── post.html         # Template for blog articles (with date)
 │   └── page.html         # Template for static pages (no date)
@@ -191,6 +196,7 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
+* **v1.6**: Added chronological Blog page, post counts in subtitles, limited homepage to 10 posts, and unified typography.
 * **v1.5**: Introduced template inheritance (`base.html`), added `archive.html` generator, and split logic into `section` (structure) vs `category` (semantic).
 * **v1.4**: Added `_media` folder support for hosting local images and assets.
 * **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
