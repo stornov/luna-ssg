@@ -73,7 +73,7 @@ This is a [link to Google](https://www.google.com).
 
 Here is a placeholder image:
 
-![A placeholder image of a "landscape"](/media/example.png)
+![A placeholder image of a 'landscape'](/media/example.png)
 *Image of a "landscape"*
 
 ---
