@@ -2,6 +2,11 @@
 
 All notable changes to the **Luna SSG** project will be documented in this file.
 
+## [1.6.4] - 2026-02-10
+### Added
+- CSS styles for image captions (text becomes centered, italic, and gray when placed immediately under an image).
+- Proper centering logic for images within post content.
+
 ## [1.6.3] - 2026-02-10
 ### Changed
 - Refined homepage logic: the 10-post limit now applies exclusively to the `blog` section.
