@@ -197,7 +197,9 @@ If you have a file `_media/example.png`:
     Then open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## 📜 Version History
+
 Current version: **v1.6.4**
+
 The full list of changes and roadmap is available in [CHANGELOG.md](./CHANGELOG.md).
 
 ## 📄 License
