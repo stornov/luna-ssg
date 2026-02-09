@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.6.2)
+# 🌙 Luna SSG (v1.6.3)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.6.2-blue)
+![Version](https://img.shields.io/badge/version-1.6.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -21,7 +21,7 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ### 📝 Content Management
 * **Smart Sections & Archive**: Automatically groups posts into structural sections for the homepage and creates a categorized `/archive.html` with post counts.
 * **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
-* **Smart Homepage**: Displays only the latest 10 posts to keep the landing page clean.
+* **Smart Homepage**: To keep the landing page clean, the **blog** section is limited to the latest 10 posts, while other sections (like Projects or Events) remain fully visible.
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
 * **Intelligent URLs**: Auto-generates clean slugs from titles or uses custom ones from frontmatter.
 
@@ -197,16 +197,8 @@ If you have a file `_media/example.png`:
     Then open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## 📜 Version History
-
-* **v1.6.2**: Added `baseurl` support for improved portability between root domains and subfolders.
-* **v1.6.1**: Fixed heading hierarchy (distinguished H1 and H2 sizes).
-* **v1.6.0**: Added chronological Blog page, post counts in subtitles, limited homepage to 10 posts, and unified typography.
-* **v1.5**: Introduced template inheritance (`base.html`), added `archive.html` generator, and split logic into `section` (structure) vs `category` (semantic).
-* **v1.4**: Added `_media` folder support for hosting local images and assets.
-* **v1.3**: Added `bottom_sections` — create unlimited custom lists in the footer via config.
-* **v1.2**: Added Linklog functionality and Projects section.
-* **v1.1**: Migrated to `markdown-it-py` for better rendering (tables, nested lists).
-* **v1.0**: Initial release.
+Current version: **v1.6.3**
+The full list of changes and roadmap is available in [CHANGELOG.md](./CHANGELOG.md).
 
 ## 📄 License
 

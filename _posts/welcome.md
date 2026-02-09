@@ -3,6 +3,7 @@ title: "Welcome to Luna SSG"
 date: 2026-01-26
 section: blog
 slug: welcome
+category: Intro
 ---
 
 # Hello! You're all set.
