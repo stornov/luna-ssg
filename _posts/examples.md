@@ -73,6 +73,7 @@ This is a [link to Google](https://www.google.com).
 Here is a placeholder image:
 
 ![A placeholder image of a landscape](https://placehold.co/600x300)
+*A placeholder image of a landscape*
 
 ---
 
