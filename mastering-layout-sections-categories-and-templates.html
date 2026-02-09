@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Mastering Layout: Sections, Categories, and Templates</title>
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/mystyle.css" type="text/css">
+</head>
+<body>
+    <div class="site">
+        <div class="title">
+            <a href="/">Luna SSG Template</a>
+            
+            
+    
+        <a class="extra" href="/">Home</a>
+    
+
+    
+        <a class="extra" href="/blog.html">Blog</a>
+    
+
+    
+        <a class="extra" href="/archive.html">Archive</a>
+    
+
+    
+        <a class="extra" href="https://github.com/">GitHub</a>
+    
+
+        </div>
+        
+        
+<div id="post">
+    <h1>Mastering Layout: Sections, Categories, and Templates</h1>
+    <div class="meta">
+        Luna Core — 
+        10 Feb 2026
+
+        
+            &#124; Posted in <a href="/archive.html#documentation">Documentation</a>
+        
+    </div>
+    
+    <p>Luna SSG is driven by metadata (Frontmatter). By changing a few lines at the top of your Markdown file, you can completely change how and where your content appears.</p>
+<p>This guide covers the core logic of the engine as of <strong>v1.6</strong>.</p>
+<hr />
+<h2>1. Sections vs. Categories</h2>
+<p>In Luna SSG, these two fields serve different purposes:</p>
+<h3><code>section</code> (Structural)</h3>
+<p>The <code>section</code> field determines which block on the <strong>Homepage</strong> your post will appear in.</p>
+<ul>
+<li><strong>How to use:</strong> The value must match an <code>id</code> in the <code>sections</code> list within your <code>_config.yml</code>.</li>
+<li><strong>Example:</strong> <code>section: blog</code> or <code>section: tech</code>.</li>
+<li><strong>Behavior:</strong> To keep the homepage clean, the <strong>blog</strong> section is limited to the latest 10 posts. Other sections (like &quot;Projects&quot; or &quot;Events&quot;) display all entries.</li>
+</ul>
+<h3><code>category</code> (Semantic)</h3>
+<p>The <code>category</code> field is used for grouping posts on the <strong>Archive</strong> page.</p>
+<ul>
+<li><strong>Availability:</strong> Currently, categories are only processed for posts where <code>section: blog</code>.</li>
+<li><strong>Default:</strong> If not specified, it defaults to <strong>&quot;Random&quot;</strong>.</li>
+<li><strong>Behavior:</strong> Clicking a category in the post metadata will take you to the specific section in <code>/archive.html</code>.</li>
+</ul>
+<hr />
+<h2>2. Templates</h2>
+<p>You can choose between two built-in layouts:</p>
+<ol>
+<li><strong><code>template: post</code></strong> (Default):
+<ul>
+<li>Displays the date and location.</li>
+<li>Shows the &quot;Posted in...&quot; metadata.</li>
+<li>Appears in the chronological blog list.</li>
+</ul>
+</li>
+<li><strong><code>template: page</code></strong>:
+<ul>
+<li>Hides the date and metadata.</li>
+<li>Used for static content like &quot;About Me&quot;, &quot;Contact&quot;, or &quot;404&quot;.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>3. Linklog (External Links)</h2>
+<p>Luna SSG supports &quot;Daring Fireball&quot; style link posts. If you add a <code>link</code> field, the post title on the homepage and archive will point directly to that URL.</p>
+<pre><code class="language-yaml">title: &quot;Check this cool site&quot;
+link: &quot;https://example.com&quot;
+</code></pre>
+<p>A small arrow (<code>→</code>) is automatically added to the title to indicate an external destination.</p>
+<hr />
+<h2>4. Intelligent URLs</h2>
+<p>By default, the engine creates a URL based on your title (e.g., <code>Hello World</code> -&gt; <code>hello-world.html</code>). However, you can override this:</p>
+<ul>
+<li><strong>Custom Slug:</strong> Use <code>slug: my-custom-url</code> to set a specific filename.</li>
+<li><strong>Unpublished:</strong> Set <code>published: false</code> to hide the post from all lists (useful for drafts), though the HTML file will still be generated if you want to preview it via a direct link.</li>
+</ul>
+<hr />
+<h2>Example Frontmatter</h2>
+<p>Here is a complete example of a well-configured post:</p>
+<pre><code class="language-yaml">---
+title: &quot;My New Project&quot;
+date: 2026-02-10
+section: blog
+category: Projects
+location: &quot;Ozersk, Russia&quot;
+slug: cool-project-2026
+published: true
+template: post
+---
+</code></pre>
+<p>Happy blogging with <strong>Luna SSG</strong>!</p>
+
+</div>
+
+
+        <div class="footer">
+            <div class="contact-wrapper">
+    
+    <div class="contact">
+        <p>
+            <strong>Contacts</strong><br>
+            
+                
+                    <a href="mailto:contact@example.com">contact@example.com</a><br>
+                
+            
+                
+                    City, Country<br>
+                
+            
+        </p>
+    </div>
+    
+    <div class="contact">
+        <p>
+            <strong>Socials</strong><br>
+            
+                
+                    <a href="https://github.com/">GitHub</a><br>
+                
+            
+                
+                    <a href="https://example.com">Website</a><br>
+                
+            
+        </p>
+    </div>
+    
+    <div class="contact">
+        <p>
+            <strong>Info</strong><br>
+            
+                
+                    © 2026 Your Name<br>
+                
+            
+                
+                    <a href="https://github.com/stornov/luna-ssg">Powered by Luna SSG</a><br>
+                
+            
+        </p>
+    </div>
+    
+</div>
+<div style="clear: both;"></div>
+        </div>
+    </div>
+</body>
+</html>
