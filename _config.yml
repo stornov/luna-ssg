@@ -2,14 +2,15 @@ lang: en-us
 title: Luna SSG Template
 author: Your Name
 theme: mystyle.css
+baseurl: "/luna-ssg"
 
 menu:
   - title: Home
-    url: /luna-ssg/
+    url: /
   - title: Blog
-    url: /luna-ssg/blog.html
+    url: /blog.html
   - title: Archive
-    url: /luna-ssg/archive.html
+    url: /archive.html
   - title: GitHub
     url: https://github.com/
 
@@ -23,7 +24,7 @@ bottom_sections:
   - title: "Open Source Projects"
     items:
       - title: Luna SSG
-        url: https://github.com/yourname/luna-ssg
+        url: https://github.com/stornov/luna-ssg
         description: "My custom site engine."
       - title: Another App
         url: https://google.com

@@ -29,7 +29,6 @@ def load_config():
 
 def setup_environment():
     env = Environment(loader=FileSystemLoader(search_path=str(DIRS["templates"])))
-    # Регистрируем теги наследования, которых нет в стандартном Liquid
     env.add_tag(ExtendsTag)
     env.add_tag(BlockTag)
     return env
@@ -42,6 +41,7 @@ def slugify(text):
 
 def get_global_context(config):
     return {
+        "baseurl": config.get("baseurl", ""),
         "lang": config.get("lang", "en"),
         "site_title": config.get("title"),
         "author": config.get("author"),
