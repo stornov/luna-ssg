@@ -3,9 +3,10 @@ title: "Markdown Features Demo"
 date: 2026-01-25
 section: tech
 slug: markdown-demo
+template: page
 ---
 
-This post demonstrates the full range of Markdown syntax supported by the Luna SSG engine.
+This page demonstrates the full range of Markdown syntax supported by the Luna SSG engine.
 
 ---
 
