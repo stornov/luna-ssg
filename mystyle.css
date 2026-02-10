@@ -213,3 +213,54 @@ ul.posts span { color: #aaa; font-family: monospace; font-size: 80%; }
 .post-item a:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 800px) {
+    .site {
+        width: 90%;
+        max-width: 90%;
+        margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body { font-size: 15px; }
+
+    .site {
+        width: 94%;
+        margin: 1.5em auto;
+        text-align: left;
+    }
+
+    #home h1, #post h1 { font-size: 1.7em; }
+    #home h2, .year-title { font-size: 1.35em; }
+
+    .title { line-height: 2.0; margin-bottom: 1.5em; text-align: center; }
+    .site .title a.extra { display: inline-block; margin: 0 0.5em; }
+
+    .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .site .footer .contact {
+        float: none;
+        box-sizing: border-box;
+        width: 50%;
+        margin: 0 0 1.5em 0;
+        padding-right: 10px;
+    }
+
+    .site .footer { text-align: left; }
+
+    .month-name { width: 2.8em; min-width: 2.8em; font-size: 0.8em; }
+
+    #post table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #post pre { font-size: 0.85em; padding: 0.8em; }
+}
