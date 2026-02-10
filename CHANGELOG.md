@@ -2,6 +2,13 @@
 
 All notable changes to the **Luna SSG** project will be documented in this file.
 
+## [1.6.6] - 2026-02-10
+### Added
+- Full mobile-responsive CSS (optimized typography, 2-column footer grid).
+- Horizontal scrolling for tables on mobile devices.
+- Added "Configure baseurl" step to Quick Start in README.
+- Console reminder for the current `baseurl` during the build process.
+
 ## [1.6.5] - 2026-02-10
 ### Fixed
 - Image paths in Markdown now correctly include `baseurl`, fixing broken images on project sites (subfolders).

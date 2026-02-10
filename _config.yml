@@ -2,7 +2,7 @@ lang: en-us
 title: Luna SSG Template
 author: Your Name
 theme: mystyle.css
-baseurl: "/luna-ssg"
+baseurl: ""
 
 menu:
   - title: Home

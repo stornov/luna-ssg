@@ -1,7 +1,7 @@
-# 🌙 Luna SSG (v1.6.5)
+# 🌙 Luna SSG (v1.6.6)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
-![Version](https://img.shields.io/badge/version-1.6.5-blue)
+![Version](https://img.shields.io/badge/version-1.6.6-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **Luna SSG** is a lightweight, custom-built static site generator written in **Python**.
@@ -21,15 +21,14 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ### 📝 Content Management
 * **Smart Sections & Archive**: Automatically groups posts into structural sections for the homepage and creates a categorized `/archive.html` with post counts.
 * **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
-* **Smart Homepage**: To keep the landing page clean, the **blog** section is limited to the latest 10 posts, while other sections (like Projects or Events) remain fully visible.
+* **Smart Homepage**: To keep the landing page clean, the **blog** section is limited to the latest 10 posts.
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
-* **Intelligent URLs**: Auto-generates clean slugs from titles or uses custom ones from frontmatter.
 
 ### 🎨 Design & DX (Developer Experience)
-* **Smart Code Styling**: Console blocks (`bash`, `sh`, `console`) automatically render with a dark terminal theme, while other languages use standard syntax highlighting.
-* **Refined Typography**: Unified heading sizes and metadata styles for a professional, minimal look.
-* **Local Media Support**: Automatic processing of images from the `_media` folder (including WebP conversion).
-* **Dynamic Layouts**: Create unlimited custom lists (Projects, Books, Portfolio) in the footer directly from the config.
+* **Mobile Responsive**: Fully optimized for smartphones and tablets with a 2-column grid footer and scrollable tables.
+* **Smart Code Styling**: Console blocks (`bash`, `sh`) automatically render with a dark terminal theme.
+* **Refined Typography**: Unified heading sizes and metadata styles for a professional look.
+* **Local Media Support**: Automatic processing of images from the `_media` folder (WebP conversion).
 
 ## 🛠️ Tech Stack
 
@@ -169,27 +168,28 @@ If you have a file `_media/example.png`:
 ## 📦 Quick Start
 
 1. **Use this template** (or clone the repo):
-
     ```bash
     git clone https://github.com/stornov/luna-ssg.git
     cd luna-ssg
     ```
 
 2. **Install dependencies**:
-
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Build the site**:
+3. **Configure (Crucial for GitHub Pages)**:
+    Open `_config.yml` and set your `baseurl`:
+    * If your site is `username.github.io/my-site/`, set `baseurl: "/my-site"`.
+    * If you use a custom domain or it's a root user site, set `baseurl: ""`.
 
+4. **Build the site**:
     ```bash
     python main.py
     ```
 
-4. **Preview locally**:
+5. **Preview locally**:
     Start a simple Python server to view the generated site:
-
     ```bash
     python -m http.server --directory _site
     ```
@@ -198,7 +198,7 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-Current version: **v1.6.5**
+Current version: **v1.6.6**
 
 The full list of changes and roadmap is available in [CHANGELOG.md](./CHANGELOG.md).
 
