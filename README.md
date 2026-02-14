@@ -1,4 +1,4 @@
-# 🌙 Luna SSG (v1.6.6)
+# 🌙 Luna SSG (v1.7.0)
 
 ![Python](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.6.6-blue)
@@ -13,18 +13,21 @@ It was designed as a high-performance, developer-friendly alternative to Jekyll.
 ## 🚀 Key Features
 
 ### 🛠️ Core Engine
+
 * **Pure Python Core**: Simple, understandable logic in a single `main.py` engine.
 * **Liquid Templating**: Native support for logic-based HTML templates with inheritance (`base.html`, `{% extends %}`).
 * **Subfolder Portability**: Support for root domains or project subfolders (e.g., `username.github.io/repo/`) via the `baseurl` setting.
 * **GitHub Pages Ready**: Automatically generates `.nojekyll` and includes deployment workflows.
 
 ### 📝 Content Management
+
 * **Smart Sections & Archive**: Automatically groups posts into structural sections for the homepage and creates a categorized `/archive.html` with post counts.
 * **Chronological Blog**: Generates a `/blog.html` page grouped by Year and Month.
 * **Smart Homepage**: To keep the landing page clean, the **blog** section is limited to the latest 10 posts.
 * **Linklog Support**: Create "Daring Fireball" style external link posts.
 
 ### 🎨 Design & DX (Developer Experience)
+
 * **Mobile Responsive**: Fully optimized for smartphones and tablets with a 2-column grid footer and scrollable tables.
 * **Smart Code Styling**: Console blocks (`bash`, `sh`) automatically render with a dark terminal theme.
 * **Refined Typography**: Unified heading sizes and metadata styles for a professional look.
@@ -168,12 +171,14 @@ If you have a file `_media/example.png`:
 ## 📦 Quick Start
 
 1. **Use this template** (or clone the repo):
+
     ```bash
     git clone https://github.com/stornov/luna-ssg.git
     cd luna-ssg
     ```
 
 2. **Install dependencies**:
+
     ```bash
     pip install -r requirements.txt
     ```
@@ -184,12 +189,14 @@ If you have a file `_media/example.png`:
     * If you use a custom domain or it's a root user site, set `baseurl: ""`.
 
 4. **Build the site**:
+
     ```bash
     python main.py
     ```
 
 5. **Preview locally**:
     Start a simple Python server to view the generated site:
+
     ```bash
     python -m http.server --directory _site
     ```
@@ -198,7 +205,7 @@ If you have a file `_media/example.png`:
 
 ## 📜 Version History
 
-Current version: **v1.6.6**
+Current version: **v1.7.0**
 
 The full list of changes and roadmap is available in [CHANGELOG.md](./CHANGELOG.md).
 

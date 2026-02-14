@@ -2,6 +2,16 @@
 
 All notable changes to the **Luna SSG** project will be documented in this file.
 
+## [1.7.0] - 2026-02-14
+### Added
+- **Hierarchical URLs**: Posts are organized into subfolders (e.g., `/blog/post.html`) for better structure.
+- **Smart Assets**: Place files in `_assets/`, and the engine automatically moves them to post-specific folders.
+- **Favicon Support**: Just place `favicon.ico` in `_assets/`.
+- **404 Fix**: Static pages (template: page) now stay in the root for GitHub Pages compatibility.
+### Fixed
+- Fixed external links (linklog) arrows and redirects.
+- Standardized `baseurl` implementation for all internal links.
+
 ## [1.6.6] - 2026-02-10
 ### Added
 - Full mobile-responsive CSS (optimized typography, 2-column footer grid).
