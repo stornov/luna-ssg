@@ -24,7 +24,7 @@ bottom_sections:
   - title: "Open Source Projects"
     items:
       - title: Luna SSG
-        url: https://github.com/stornov/luna-ssg
+        url: https://github.com/luna-ssg/luna-ssg
         description: "My custom site engine."
       - title: Another App
         url: https://google.com
@@ -54,4 +54,4 @@ footer:
       - text: © 2026 Your Name
         url: null
       - text: Powered by Luna SSG
-        url: https://github.com/stornov/luna-ssg
+        url: https://github.com/luna-ssg/luna-ssg
